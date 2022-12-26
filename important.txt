@@ -1,0 +1,19 @@
+for adding field in content type and adding on body class 
+
+$node = menu_get_object();
+
+  if ($node && isset($node->nid)) {
+
+      $field_body_class = field_get_items('node', $node, 'field_body_class');
+
+ 
+
+      if (isset($field_body_class[0]['value'])) {
+
+ //  print_r("hello");
+
+          $variables['classes_array'][] = $field_body_class[0]['value'];
+
+      }
+
+  }
